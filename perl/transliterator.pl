@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 use utf8;
 use open qw(:std :utf8);
-#use warnings;
 binmode STDIN, ':utf8';
 binmode STDOUT, ":encoding(utf8)";
 
@@ -10,11 +9,9 @@ $russian = q#йцукенгшщзхъфывапролджэ\\ячсмитьбю.
 
 
 while (<>) {
-	chomp($_);
 	if (/[a-zA-Z]/) {
-		eval(qq#tr/$qwertyq/$russian/#);print "$_", "\n";
+		eval(qq#tr/$qwertyq/$russian/#); print;
 	} else {
-		eval(qq#tr/$russian/$qwertyq/#);print "$_", "\n";
+		eval(qq#tr/$russian/$qwertyq/#); print;
 	}
 }
-
